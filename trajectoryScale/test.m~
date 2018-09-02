@@ -1,0 +1,19 @@
+%% trajectory generation
+
+dt=0.01;
+time=0:dt:10;
+q=sin(time);
+dq=cos(time);
+ddq=-sin(time);
+
+plot(q);
+hold on;
+plot(dq);
+plot(ddq);
+
+%% trajectory scaling
+c=0.1; %scaling factor
+[nq,ndq,nddq,ntime]=trajLinearScaler(q,dq,ddq,time,c);
+
+figure;
+plot()
