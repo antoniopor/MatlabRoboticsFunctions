@@ -2,19 +2,20 @@ clc,clear,close all;
 %% trajectory generation
 
 dt=0.01;
-time=0:dt:10;
-q=sin(time);
-dq=cos(time);
-ddq=-sin(time);
+time=0:dt:2;
+
+q=(time-1).^3+1; %sin(time);
 
 plot(time,q);
 hold on;
-plot(time,dq);
-plot(time,ddq);
+%plot(time,dq);
+%plot(time,ddq);
 
 %% trajectory scaling
-c=10; %scaling factor
-[nq,ndq,nddq,ntime]=trajLinearScaler(q,dq,ddq,time,c);
+c=2; %scaling factor
+%[nq,ndq,nddq,ntime]=trajLinearScaler(q,dq,ddq,time,c);
+
+[nq,ndq,nddq,ntime]=trajSectorScaler(q,3,4,time,c);
 % 
 figure;
 plot(ntime,nq);
