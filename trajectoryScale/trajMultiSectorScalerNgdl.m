@@ -5,7 +5,7 @@ nq=q;
 ndq=dq;
 nddq=ddq;
 for gdl=1:size(q,1)
-[nq(gdl,:),ndq(gdl,:),nddq(gdl,:),ntime]= trajMultiSectorScaler(q(gdl,:),dq(gdl,:),ddq(gdl,:),t,scaleFactor,wypntlst)
+[nq(gdl,:),ndq(gdl,:),nddq(gdl,:),ntime]=trajMultiSectorScaler(q(gdl,:),dq(gdl,:),ddq(gdl,:),t,scaleFactor,wypntlst)
 end
 end
 
